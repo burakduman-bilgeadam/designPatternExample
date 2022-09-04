@@ -24,13 +24,13 @@ public class DecoratorPatternCustomer {
                 break;
 
                 case 2:{
-                    Food f1=new NonVegFood((Food) new VegFood());
+                    Food f1=new NonVegFood(new VegFood());
                     System.out.println(f1.prepareFood());
                     System.out.println( f1.foodPrice());
                 }
                 break;
                 case 3:{
-                    Food f2=new ChineeseFood((Food) new VegFood());
+                    Food f2=new ChineeseFood(new VegFood());
                     System.out.println(f2.prepareFood());
                     System.out.println( f2.foodPrice());
                 }

@@ -10,6 +10,7 @@ public abstract class FoodDecorator implements Food{
     public String prepareFood(){
         return newFood.prepareFood();
     }
+    @Override
     public double foodPrice(){
         return newFood.foodPrice();
     }

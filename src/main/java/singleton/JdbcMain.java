@@ -15,7 +15,6 @@ public class JdbcMain {
 
         JDBCSingleton jdbc= JDBCSingleton.getInstance();
 
-
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         do{
             System.out.println("DATABASE OPERATIONS");
@@ -27,21 +26,25 @@ public class JdbcMain {
             System.out.println(" 5. Exit      ");
 
             System.out.print("\n");
-            System.out.print("Please enter the choice what you want to perform in the database: ");
+            System.out.print("Please enter the choice what " +
+                    "you want to perform in the database: ");
 
             choice=Integer.parseInt(br.readLine());
             switch(choice) {
 
                 case 1:{
-                    System.out.print("Enter the username you want to insert data into the database: ");
+                    System.out.print("Enter the username you want " +
+                            "to insert data into the database: ");
                     String username=br.readLine();
-                    System.out.print("Enter the password you want to insert data into the database: ");
+                    System.out.print("Enter the password you want " +
+                            "to insert data into the database: ");
                     String password=br.readLine();
 
                     try {
                         int i= jdbc.insert(username, password);
                         if (i>0) {
-                            System.out.println((count++) + " Data has been inserted successfully");
+                            System.out.println((count++) + " Data has been " +
+                                    "inserted successfully");
                         }else{
                             System.out.println("Data has not been inserted ");
                         }
@@ -76,7 +79,8 @@ public class JdbcMain {
                     try {
                         int i= jdbc.delete(userid);
                         if (i>0) {
-                            System.out.println((count++) + " Data has been deleted successfully");
+                            System.out.println((count++) + " Data has been " +
+                                    "deleted successfully");
                         }else{
                             System.out.println("Data has not been deleted");
                         }
@@ -98,7 +102,8 @@ public class JdbcMain {
                     try {
                         int i= jdbc.update(username, password);
                         if (i>0) {
-                            System.out.println((count++) + " Data has been updated successfully");
+                            System.out.println((count++) + " Data has been " +
+                                    "updated successfully");
                         }
 
                     } catch (Exception e) {

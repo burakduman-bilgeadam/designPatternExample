@@ -28,12 +28,14 @@ public class JDBCSingleton {
     }
 
     // to get the connection from methods like insert, view etc.
-    private static Connection getConnection()throws ClassNotFoundException, SQLException
+    private static Connection getConnection()throws
+            ClassNotFoundException, SQLException
     {
 
         Connection con=null;
         Class.forName("com.mysql.jdbc.Driver");
-        con= DriverManager.getConnection("jdbc:mysql://localhost:3306/ashwanirajput", "root", "ashwani");
+        con= DriverManager.getConnection("jdbc:mysql://localhost:3306/ashwanirajput",
+                "root", "ashwani");
         return con;
 
     }
@@ -55,7 +57,8 @@ public class JDBCSingleton {
             ps.setString(2, pass);
             recordCounter=ps.executeUpdate();
 
-        } catch (Exception e) { e.printStackTrace(); } finally{
+        } catch (Exception e) { e.printStackTrace(); }
+        finally{
             if (ps!=null){
                 ps.close();
             }if(c!=null){
@@ -103,7 +106,8 @@ public class JDBCSingleton {
         int recordCounter=0;
         try {
             c=this.getConnection();
-            ps=c.prepareStatement(" update userdata set upassword=? where uname='"+name+"' ");
+            ps=c.prepareStatement(" update userdata set upassword=? " +
+                    "where uname='"+name+"' ");
             ps.setString(1, password);
             recordCounter=ps.executeUpdate();
         } catch (Exception e) {  e.printStackTrace(); } finally{

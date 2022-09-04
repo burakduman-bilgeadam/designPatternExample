@@ -1,6 +1,6 @@
 package builder;
 
 public interface Packing {
-    public String pack();
-    public int price();
+    String pack();
+    int price();
 }
